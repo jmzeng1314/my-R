@@ -9,7 +9,7 @@ gpl_info=gpl_info[grepl("Mus|Rattus|Homo",gpl_info[,3]),]
 for (i in 1:nrow(gpl_info)){
   print(i)
   platform=gpl_info[i,4]
-  platform=gsub('^ ',"",platform) ##主要是因为我处理包的字符串前面有空格
+  platform=gsub('^ ',"",platform) ##涓昏鏄洜涓烘垜澶勭悊鍖呯殑瀛楃涓插墠闈㈡湁绌烘牸
   #platformDB='hgu95av2.db'
   platformDB=paste(platform,".db",sep="")
   if( platformDB  %in% rownames(installed.packages()) == FALSE) {
@@ -18,7 +18,7 @@ for (i in 1:nrow(gpl_info)){
     #biocLite(platformDB )
   } 
 }
-下载完了所有的包， 就可以进行批量导出芯片探针与gene的对应关系！
+#涓嬭浇瀹屼簡鎵�鏈夌殑鍖咃紝 灏卞彲浠ヨ繘琛屾壒閲忓鍑鸿姱鐗囨帰閽堜笌gene鐨勫搴斿叧绯伙紒
 for (i in 1:nrow(gpl_info)){
   print(i)
   platform=gpl_info[i,4]
@@ -30,9 +30,9 @@ for (i in 1:nrow(gpl_info)){
     library(platformDB,character.only = T)
     #tmp=paste('head(mappedkeys(',platform,'ENTREZID))',sep='')
     #eval(parse(text = tmp))
-###重点在这里，把字符串当做命令运行
+    ###閲嶇偣鍦ㄨ繖閲岋紝鎶婂瓧绗︿覆褰撳仛鍛戒护杩愯
     all_probe=eval(parse(text = paste('mappedkeys(',platform,'ENTREZID)',sep='')))
     EGID <- as.numeric(lookUp(all_probe, platformDB, "ENTREZID"))
-##自己把内容写出来即可
+    ##鑷繁鎶婂唴瀹瑰啓鍑烘潵鍗冲彲
   } 
 }
