@@ -188,7 +188,7 @@ DEG_DESeq2 <- function(exprSet=exprSet,group_list=group_list){
 								colData = colData,
 								design = ~ group_list)
 	dds <- DESeq(dds)
-	png("qc-dispersions.png", 1000, 1000, pointsize=20)
+	png("qc_dispersions.png", 1000, 1000, pointsize=20)
 	plotDispEsts(dds, main="Dispersion plot")
 	dev.off()
 	res <- results(dds)
@@ -235,7 +235,7 @@ DEG_DESeq <- function(exprSet=exprSet,group_list=group_list){
 	de=newCountDataSet(exprSet,group_list)
 	de=estimateSizeFactors(de)
 	de=estimateDispersions(de)
-	png("qc-dispersions.png", 1000, 1000, pointsize=20)
+	png("qc_dispersions.png", 1000, 1000, pointsize=20)
 	DESeq::plotDispEsts(de, main="Dispersion plot")
 	dev.off()
 	
@@ -337,13 +337,17 @@ shinyServer(function(input, output) {
 	})
 	output$matrix_control  <- renderDataTable({
 		example_data=get_example_data()
-		example_data$matrix_a		
+		tmp=example_data$matrix_a		
+		tmp=cbind(ID=rownames(tmp),tmp)
+		tmp
 	})
 	output$matrix_case  <- renderDataTable({
 		example_data=get_example_data()
-		example_data$matrix_b		
+		tmp=example_data$matrix_b	
+		tmp=cbind(ID=rownames(tmp),tmp)
+		tmp		
 	})
-		output$DEG_results  <- renderDataTable({
+	output$DEG_results  <- renderDataTable({
 		example_data=get_example_data()
 		DEG_method=tolower(input$method)
 		exprSet=example_data$exprSet
@@ -368,4 +372,48 @@ shinyServer(function(input, output) {
 		DEG_results=cbind(symbol=rownames(DEG_results),DEG_results)
 		DEG_results
 	})
+	output$MA_plot <-renderImage({
+	 list(src = "MA.png",
+         contentType = 'image/png',
+         width = 400,
+         height = 300,
+         alt = "This is alternate text")
+	})
+	output$MDS_plot <-renderImage({
+	list(src = "MDS.png",
+         contentType = 'image/png',
+         width = 400,
+         height = 300,
+         alt = "This is alternate text")
+	})
+	output$BCV_plot <-renderImage({
+	list(src = "BCV.png",
+         contentType = 'image/png',
+         width = 400,
+         height = 300,
+         alt = "This is alternate text")
+	})
+	output$volcanoplot <-renderImage({
+	list(src = "volcanoplot.png",
+         contentType = 'image/png',
+         width = 400,
+         height = 300,
+         alt = "This is alternate text")
+	})
+	output$qc_dispersions <-renderImage({
+	list(src = "qc_dispersions.png",
+         contentType = 'image/png',
+         width = 400,
+         height = 300,
+         alt = "This is alternate text")
+	})
+	output$RAWvsNORM <-renderImage({
+	list(src = "RAWvsNORM.png",
+         contentType = 'image/png',
+         width = 400,
+         height = 300,
+         alt = "This is alternate text")
+	})
+		
+	
 })

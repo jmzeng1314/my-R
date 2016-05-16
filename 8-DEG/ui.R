@@ -62,9 +62,11 @@ shinyUI(fluidPage(
 			tabPanel("group 1",dataTableOutput("matrix_control")),
 			tabPanel("group 2",dataTableOutput("matrix_case")),
 			tabPanel("results for the DEG",dataTableOutput("DEG_results")),
-			tabPanel("quality control",imageOutput("qc_values_distribution"),
-										imageOutput("qc_sample_clustering"),
-										imageOutput("MA_plot"),
+			tabPanel("quality control",imageOutput("MA_plot"),
+										imageOutput("MDS_plot"),
+										imageOutput("BCV_plot"),
+										imageOutput("RAWvsNORM"),
+										imageOutput("qc_dispersions"),
 										imageOutput("volcanoplot")
 										
 			)
