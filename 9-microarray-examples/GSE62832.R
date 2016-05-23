@@ -1,3 +1,7 @@
+## 36 samples (18 individuals - paired)
+## 18 pre-treatment and 18 post-treatment
+## 14 MAO vs 22 MNO  according to the metabolic_status 
+
 library(GEOquery)
 library(limma) 
 GSE62832 <- getGEO('GSE62832', destdir=".",getGPL = F)
