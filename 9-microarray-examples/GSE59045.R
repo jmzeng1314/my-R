@@ -25,7 +25,8 @@ head(Table(gpl)[,c(1,15,19)])  ## you need to check this , which column do you n
 probe2symbol=Table(gpl)[,c(1,15)]
  
 symbol=probe2symbol[match(probeset,probe2symbol[,1]),2]
-
+symbol= as.character(symbol)
+exprSet=exprs(GSE59045[[1]])
 a=cbind(symbol,exprSet)
 ## remove the duplicated probeset 
 rmDupID <-function(a=matrix(c(1,1:5,2,2:6,2,3:7),ncol=6)){
@@ -51,6 +52,7 @@ design=model.matrix(~ treatment)
 fit=lmFit(exprSet,design)
 fit=eBayes(fit) 
 vennDiagram(decideTests(fit))
-
+NASH_steatosis=topTable(fit,coef='treatmentNASH',n=Inf,adjust='BH')
+NAFLD_steatosis=topTable(fit,coef='treatmentNAFLD',n=Inf,adjust='BH')
 write.csv(topTable(fit,coef='treatmentNASH',n=Inf,adjust='BH'),"NASH-steatosis.DEG.csv")
 write.csv(topTable(fit,coef='treatmentNAFLD',n=Inf,adjust='BH'),"NAFLD-steatosis.DEG.csv") 
