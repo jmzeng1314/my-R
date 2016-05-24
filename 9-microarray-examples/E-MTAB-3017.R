@@ -1,3 +1,4 @@
+## GPL6480//Agilent//ArrayExpress
 getwd()
 # http://www.bioconductor.org/packages/release/bioc/vignettes/ArrayExpress/inst/doc/ArrayExpress.pdf
 # http://www.bioconductor.org/packages/release/bioc/manuals/Biobase/man/Biobase.pdf
