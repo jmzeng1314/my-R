@@ -1,3 +1,4 @@
+## HuGene-1_0-st // GPL6244 // obesity
 library(GEOquery)
 library(limma) 
 GSE70529 <- getGEO('GSE70529', destdir=".",getGPL = F)
