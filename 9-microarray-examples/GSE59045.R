@@ -54,5 +54,13 @@ fit=eBayes(fit)
 vennDiagram(decideTests(fit))
 NASH_steatosis=topTable(fit,coef='treatmentNASH',n=Inf,adjust='BH')
 NAFLD_steatosis=topTable(fit,coef='treatmentNAFLD',n=Inf,adjust='BH')
+t1=rownames(NASH_steatosis[NASH_steatosis$P.Value<0.05,])
+t2=rownames(NAFLD_steatosis[NAFLD_steatosis$P.Value<0.05,])
+
+length(setdiff(t1,t2))
+length(setdiff(t2,t1))
+length(intersect(t1,t2))
+
+
 write.csv(topTable(fit,coef='treatmentNASH',n=Inf,adjust='BH'),"NASH-steatosis.DEG.csv")
 write.csv(topTable(fit,coef='treatmentNAFLD',n=Inf,adjust='BH'),"NAFLD-steatosis.DEG.csv") 
