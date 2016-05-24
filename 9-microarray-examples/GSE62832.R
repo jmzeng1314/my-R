@@ -1,7 +1,7 @@
 ## 36 samples (18 individuals - paired)
 ## 18 pre-treatment and 18 post-treatment
 ## 14 MAO vs 22 MNO  according to the metabolic_status 
-
+## HuGene-1_0-st // GPL6244 // obesity
 library(GEOquery)
 library(limma) 
 GSE62832 <- getGEO('GSE62832', destdir=".",getGPL = F)
