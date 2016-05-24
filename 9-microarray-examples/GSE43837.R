@@ -1,4 +1,4 @@
-## GSE43837
+## GPL1352// U133_X3P//GSE43837
 #exprSet_url="ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE43nnn/GSE43837/matrix/GSE43837_series_matrix.txt.gz"
 #a=read.table(exprSet_url,sep = '\t',header = T,comment.char = "!")
 library(GEOquery)
