@@ -1,5 +1,6 @@
 ## kidney	GPL96	HG-U133A
 ## different subtype tissue :Glomerulus Tubulus
+## glomerulus apparently overrepresentation  compared with Tubulus
 rm(list=ls())
 library(GEOquery)
 library(limma) 
