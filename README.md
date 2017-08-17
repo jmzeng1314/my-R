@@ -20,7 +20,9 @@
     We can use this scripts to do enrichment for the organisms which are not support by Bioconductor package
     one of them use the GOstats package to do enrichment ,the other use the function writen by me.
 ##7-enrichment-with-newest-kegg/
-    most of the kegg database are to old , for example:org.Hs.egPATH has 5869 entrez genes and 229 pathways
+    most of the kegg database are too old , for example:
+    
+    org.Hs.egPATH has 5869 entrez genes and 229 pathways
     On Augest 2015, there are 6901 entrez genes and 295 pathways
     And now , there are 299 pathways and 6992 genes.
     Address the sustainable growth of kegg database, it's essential to update it.
@@ -29,3 +31,12 @@
 ##8-DEG
     there will be a detailed instruction in the folder, please go ahead .
     just for differential expression analysis !!!
+
+##9-microarray
+
+
+##10-RNA-seq-3-groups
+	there are three groups for this RNA-seq data.
+	treat_2 vs control ,  treat_12 vs control.
+	Using DEseq2,edgeR,and voom(limma).
+	You can conpare these 3 methods. 
