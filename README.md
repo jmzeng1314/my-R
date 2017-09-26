@@ -1,4 +1,5 @@
-# my-R
+# RscriptsCollection
+This is a collection of R scripts forked from [jmzeng1314](https://github.com/jmzeng1314/my-R)
 #This is a small collection for the R scripts 
 ##1-get-all-probeset-info/
     it will download all of the microarray plantform R bioconductor packages, and extract the probeset information and corresponding gene ID
