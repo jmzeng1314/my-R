@@ -1,0 +1,23 @@
+Disease	SampleID
+CLL11.CEL	progres.	CLL11
+CLL12.CEL	stable	CLL12
+CLL13.CEL	progres.	CLL13
+CLL14.CEL	progres.	CLL14
+CLL15.CEL	progres.	CLL15
+CLL16.CEL	progres.	CLL16
+CLL17.CEL	stable	CLL17
+CLL18.CEL	stable	CLL18
+CLL19.CEL	progres.	CLL19
+CLL20.CEL	stable	CLL20
+CLL21.CEL	progres.	CLL21
+CLL22.CEL	stable	CLL22
+CLL23.CEL	progres.	CLL23
+CLL24.CEL	stable	CLL24
+CLL2.CEL	stable	CLL2
+CLL3.CEL	progres.	CLL3
+CLL4.CEL	progres.	CLL4
+CLL5.CEL	progres.	CLL5
+CLL6.CEL	progres.	CLL6
+CLL7.CEL	progres.	CLL7
+CLL8.CEL	progres.	CLL8
+CLL9.CEL	stable	CLL9

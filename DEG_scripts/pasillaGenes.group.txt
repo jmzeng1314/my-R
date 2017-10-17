@@ -1,0 +1,8 @@
+condition	type
+treated1fb	treated	single-read
+treated2fb	treated	paired-end
+treated3fb	treated	paired-end
+untreated1fb	untreated	single-read
+untreated2fb	untreated	single-read
+untreated3fb	untreated	paired-end
+untreated4fb	untreated	paired-end
