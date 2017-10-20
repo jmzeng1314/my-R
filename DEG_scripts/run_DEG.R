@@ -43,6 +43,16 @@ if (is.null(opt$contrast)  ){
 
 ## program...
 
+
+for (pkg in c("limma","DESeq2","edgeR","pi0",'UpSetR')){
+  if (! require(pkg,character.only=T) ) {
+    #source("https://bioconductor.org/biocLite.R")
+    BiocInstaller::biocLite(pkg,ask = F,suppressUpdates = T)
+    require(pkg,character.only=T) 
+    }
+}
+ 
+
 exprSet=read.table(opt$expression,stringsAsFactors = F,header = T)
 group_info=read.table(opt$group,stringsAsFactors = F,header = T)
 
