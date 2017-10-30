@@ -55,9 +55,9 @@
 ## 下载差异分析脚本
 
 ```shell
-wget  https://github.com/jmzeng1314/my-R/blob/master/DEG_scripts/run_DEG.R
-wget  https://github.com/jmzeng1314/my-R/blob/master/DEG_scripts/tair/exprSet.txt
-wget  https://github.com/jmzeng1314/my-R/blob/master/DEG_scripts/tair/group_info.txt
+wget  https://raw.githubusercontent.com/jmzeng1314/my-R/master/DEG_scripts/run_DEG.R
+wget  https://raw.githubusercontent.com/jmzeng1314/my-R/master/DEG_scripts/tair/exprSet.txt
+wget  https://raw.githubusercontent.com/jmzeng1314/my-R/master/DEG_scripts/tair/group_info.txt
 Rscript ../run_DEG.R -e exprSet.txt -g group_info.txt -c 'Day1-Day0' -s counts  -m DESeq2
 ```
 
